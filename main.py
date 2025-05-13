@@ -1,7 +1,7 @@
 from app.Config import Config
 from app.database.MonitoringDBHandler import MonitoringDBHandler
 from app.database.CowrieDBHandler import CowrieDBHandler
-from app.monitoring.Scheduler import Scheduler
+from app.monitoring.URLMonitor import URLMonitor
 
 def main():
     config = Config()
@@ -11,8 +11,8 @@ def main():
     cowrie_db = CowrieDBHandler(cowrie_db_config)
     monitoring_db = MonitoringDBHandler(monitoring_db_config)
 
-    scheduler = Scheduler(cowrie_db, monitoring_db)
-    scheduler.start()
+    monitor = URLMonitor(cowrie_db, monitoring_db)
+    monitor.start()
 
 if __name__ == '__main__':
     main()

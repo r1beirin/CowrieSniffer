@@ -2,7 +2,7 @@ import socket
 import time
 import re
 
-class Scheduler:
+class URLMonitor:
     def __init__(self, cowrie_db, monitoring_db):
         self.cowrie_db = cowrie_db
         self.monitoring_db = monitoring_db
