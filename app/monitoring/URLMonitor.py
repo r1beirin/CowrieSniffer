@@ -182,17 +182,11 @@ class URLMonitor:
         while True:
             print("[PERIODIC TASK] Running...")
 
-            #self.cowrie_db.ensure_connection()
-            #self.monitoring_db.ensure_connection()
-
             self.verify_download()
             self.verify_from_input()
         
             if not self.monitoring_db.url_monitoring_is_empty():
                 self.verify_connections()
-
-            #self.cowrie_db.close_connection()
-            #self.monitoring_db.close_connection()
 
             print("[PERIODIC TASK] Finished!", end="\n\n")
 
